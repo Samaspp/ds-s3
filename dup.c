@@ -27,30 +27,47 @@ struct node* temp=head;
 
 
 while(temp->next!=NULL){
+
  int d=temp->data;
  struct node* prev=temp;
  struct node* check=temp->next;
-// printf("%d %d",prev->data,check->data);
- while(check->next!=NULL)
- {
-  int flag=0;
-  if (check->data==d){
-  //int p=check->data;
-  prev->next=check->next;
-  free(check);
-  printf("\n%d is deleted",d);
-  flag++;
- }if(flag==0)prev=prev->next;
-  check=check->next;
-}if(rear->data==d){
- //delete rear 
- prev->next=NULL;
- free(rear);
- printf("\n%d is deleted",d);
- rear=prev;
- rear->next=NULL;
-}temp=temp->next;
-}
+ 	
+ 	printf("\nhi1");
+	// printf("%d %d",prev->data,check->data);
+ 	while(check->next!=NULL)
+		 {
+		  int flag=0;
+		  
+		  if (check->data==d){
+		  //int p=check->data;
+		  printf("\nhi2");
+		  prev->next=check->next;
+		  
+		 // free(check);
+		  printf("\n%d is deleted",d);
+		  flag++;
+		 }
+		 
+		 if(flag==0)prev=prev->next;
+		 
+	  	 check=check->next;
+  	 
+	}
+	printf("\n%d---" , rear->data);
+	if(rear->data==d){
+		 //delete rear 
+		 printf("\nhello");
+		 prev->next=NULL;
+		 free(rear);
+		 printf("\n%d is deleted",d);
+		 rear=prev;
+		 rear->next=NULL;
+	}
+	
+	if(temp->next!=NULL)
+		temp=temp->next;
+	
+	}
 }
 
 
@@ -97,8 +114,6 @@ int main()
 }}
 return 0;
 }
-
- 
 
  
 
